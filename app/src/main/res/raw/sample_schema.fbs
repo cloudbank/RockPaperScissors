@@ -1,0 +1,9 @@
+table FBCache {
+
+
+ids: int;
+
+hashes: [int];
+}
+
+root_type FBCache;
