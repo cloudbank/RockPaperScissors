@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                 .name("user_data")
                 .build()
 
-       launch(counterContext){ saveData(ids, hashes) }
+        launch(counterContext) { saveData(ids, hashes) }
 
     }
 
@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(api = Build.VERSION_CODES.O)
     fun loadFromFlatBuffer(v: View) {
         val startTime = System.currentTimeMillis()
-       launch(counterContext){
+        launch(counterContext) {
             //final long[] avg = {0};
             //Again, make sure you read the bytes in BINARY mode, otherwise the code below won't work
             val paperAvg: Long = 0
@@ -195,7 +195,7 @@ class MainActivity : AppCompatActivity() {
         val startTime = System.currentTimeMillis()
         //final long[] avg = {0};
 
-       launch(counterContext){
+        launch(counterContext) {
             val paperAvg: Long = 0
             //for (int i = 1; i <=60; i++) {
             val ids = Paper.book().read<Int>("ids")
@@ -221,7 +221,7 @@ class MainActivity : AppCompatActivity() {
     fun loadFromSP(v: View) {
         val startTime = System.currentTimeMillis()
         // final long[] avg = {0};
-       launch(counterContext){
+        launch(counterContext) {
             //for (int i = 0; i < 5; i++) {
             val ids = spIds!!.getInt("ids", 0)
             val hashesList = spIds!!.getString("hashes", "")
@@ -243,7 +243,7 @@ class MainActivity : AppCompatActivity() {
     fun loadFromBP(v: View) {
         val startTime = System.currentTimeMillis()
         // final long[] avg = {0};
-       launch(counterContext){
+        launch(counterContext) {
             //for (int i = 0; i < 5; i++) {
             val ids = prefs!!.getInt("ids", 0)
             val hashesList = prefs!!.getString("hashes", "")
@@ -267,7 +267,7 @@ class MainActivity : AppCompatActivity() {
 
         val startTime = System.currentTimeMillis()
         //final long[] avg = {0};
-       launch(counterContext){
+        launch(counterContext) {
             // for (int i = 0; i < 5; i++) {
             val c = db.cacheDao().loadCache()
             val ids = c.ids
@@ -287,7 +287,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
 
 
 }

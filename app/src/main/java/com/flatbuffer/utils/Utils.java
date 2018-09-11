@@ -21,7 +21,6 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -53,11 +52,12 @@ public class Utils {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public static byte[] readBin(Context ctx,String filename) throws IOException {
+    public static byte[] readBin(Context ctx, String filename) throws IOException {
         File filepath = new File(ctx.getFilesDir(), filename);
         Path path = Paths.get(filepath.getPath());
         return Files.readAllBytes(path);
     }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static void writeBin(Context ctx, byte[] file, String filename) {
 

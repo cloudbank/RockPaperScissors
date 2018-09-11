@@ -7,7 +7,7 @@ import android.arch.persistence.room.TypeConverters
 @Entity
 class Cache {
     @PrimaryKey
-     var id: Int = 0
+    var id: Int = 0
 
     var ids: Int = 0
     @TypeConverters(Converters::class)
